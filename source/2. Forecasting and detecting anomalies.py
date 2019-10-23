@@ -18,6 +18,7 @@ from fbprophet import Prophet
 from fbprophet.plot import plot
 import holidays
 from datetime import datetime
+from joblib import dump, load
 
 # Settings 
 sns.set()
@@ -410,3 +411,9 @@ m4.plot(forecast4);
 # preditions for last hour using interval_width=0.99. 
 forecast5[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail(60)
 m5.plot(forecast5);
+
+### SAVE FINAL MODEL
+# use joblib’s replacement of pickle (dump & load), which is more efficient on objects that carry large numpy arrays internally
+# from joblib import dump, load
+
+dump(m5, 'model5.joblib') 
