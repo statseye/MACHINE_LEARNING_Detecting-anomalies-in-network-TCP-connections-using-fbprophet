@@ -59,9 +59,7 @@ def count_entries(csv_file, c_size, colname, pattern):
                              chunksize= c_size, 
                              names = [colname],
                              parse_dates= [colname],
-                             date_parser = lambda dates: [pd.datetime.strptime(d, pattern) for d in dates]):
-        # Sort by DatetimeIndex
-        # chunk = chunk.sort_values([colname], ascending=[True])
+                             date_parser = lambda dates: [pd.datetime.strptime(d, pattern) for d in dates])
           
         # Iterate over the column in DataFrame
         for entry in chunk[colname]:
