@@ -7,6 +7,7 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 import glob
 import pickle
 
@@ -18,7 +19,6 @@ pd.options.display.max_columns = None
 pd.options.display.max_rows = None
 
 # Change working directory
-import os
 os.getcwd()
 os.chdir(".../Time series/dane/all")
 os.getcwd()
